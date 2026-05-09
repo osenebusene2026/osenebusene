@@ -24,45 +24,86 @@ body {
 /* HEADER */
 header {
   background: var(--green-dark);
-  padding: 0 24px;
+  padding: 0 32px;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
 nav {
-  max-width: 1000px;
+  max-width: 1080px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 64px;
+  gap: 24px;
 }
 
 .nav-logo {
   color: var(--gold);
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 800;
+  font-size: 1.05rem;
   text-decoration: none;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-logo span {
+  color: #ffffff;
+  font-weight: 400;
 }
 
 .nav-links {
   display: flex;
-  gap: 28px;
+  gap: 6px;
   list-style: none;
+  align-items: center;
 }
 
 .nav-links a {
-  color: #cfe8d8;
+  color: #b8d8c4;
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s;
+  font-size: 0.88rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
 }
 
 .nav-links a:hover {
-  color: var(--gold);
+  color: white;
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--gold);
+  color: var(--green-dark) !important;
+  font-weight: 700 !important;
+  font-size: 0.82rem !important;
+  padding: 7px 14px !important;
+  border-radius: 8px !important;
+  text-decoration: none;
+  transition: opacity 0.2s, background 0.2s !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-cta:hover {
+  background: #f5d060 !important;
+  color: var(--green-dark) !important;
+  opacity: 1 !important;
+}
+
+.nav-cta svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 /* HERO */
@@ -79,6 +120,7 @@ nav {
   content: '';
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -383,7 +425,23 @@ footer a:hover {
   font-weight: 500;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+  header {
+    padding: 0 16px;
+  }
+  nav {
+    gap: 12px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-logo {
+    font-size: 0.95rem;
+  }
+  .nav-cta {
+    font-size: 0.78rem !important;
+    padding: 6px 10px !important;
+  }
   .hero {
     padding: 56px 20px 64px;
   }
