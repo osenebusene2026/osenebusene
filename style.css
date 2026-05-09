@@ -147,6 +147,19 @@ nav {
   flex-shrink: 0;
 }
 
+.store-btn-soon {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
+}
+
+.store-btn-soon small {
+  display: block;
+  font-size: 0.7rem;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+
 /* FEATURES */
 .features {
   background: var(--green-light);
